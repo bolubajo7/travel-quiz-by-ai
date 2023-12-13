@@ -1,11 +1,14 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Card from "./card.js";
+// App.js - This would be your main component.
+import React from "react";
+import DestinationHeader from "./DestinationHeader";
+import WeatherCards from "./WeatherCards";
+import "./App.css"; // Make sure to create an App.css file for App styling
 
 function App() {
   return (
     <div className="App">
-      <Card /> <Card />
+      <DestinationHeader />
+      <WeatherCards />
     </div>
   );
 }
