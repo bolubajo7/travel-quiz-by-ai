@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import DestinationHeader from "./DestinationHeader";
-import WeatherCards from "./WeatherCards";
 import HomePage from "./HomePage";
 import QuizPage from "./QuizPage";
+import DestinationPage from "./DestinationPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css"; // Make sure to create an App.css file for App styling
 
@@ -13,6 +12,7 @@ function App() {
         <Routes>
           <Route exath path="/" Component={HomePage} />
           <Route exath path="/quiz-page" Component={QuizPage} />
+          <Route exath path = "/destination-page" Component={DestinationPage} />
         </Routes>
       </Router>
     </div>
