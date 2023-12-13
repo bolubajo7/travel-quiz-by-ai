@@ -1,6 +1,9 @@
 .weatherCards {
+  max-width: 2400px;
   display: flex;
-  gap: 1rem;
-  justify-content: center;
-  padding: 1rem;
+  flex-wrap: wrap;
+  gap: 40px; /* Adjust the gap as needed */
+  justify-content: center; /* This will center the cards in the container */
+  align-items: flex-start; /* Aligns items to the start of the flex line */
+  padding: 20px; /* Add padding to the container */
 }

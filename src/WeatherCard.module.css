@@ -15,13 +15,16 @@
 }
 
 .weatherCard:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transform: scale(1.03); /* Adjust the scaling factor as needed */
+  transition: transform 0.2s ease; /* Smooth transition for the transform */
 }
 
 .title {
   font-size: 2rem; /* Slightly larger font size for the title */
   margin-bottom: 1rem; /* Increased space below the title */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+  text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.9); /* Text shadow for better readability */
 }
 
 .bodyText {

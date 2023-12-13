@@ -1,0 +1,21 @@
+/* QuestionCard.module.css */
+.questionCard {
+  width: 100%; /* Full width */
+  margin: 1rem 0; /* Add some space between question cards */
+  padding: 1rem;
+  background-color: #ffffff; /* Light background for the card */
+  border: 1px solid #ddd; /* Border for the card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.question {
+  color: #333; /* Darker color for the question text */
+  font-size: 1.25rem; /* Slightly larger font size for questions */
+}
+
+.bodyText {
+  color: #666; /* Lighter color for the body text */
+  font-size: 1rem; /* Standard font size for body text */
+  line-height: 1.5; /* Line height for better readability */
+}
