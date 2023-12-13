@@ -1,0 +1,53 @@
+
+
+.header {
+  position: relative;
+  height: 500px;
+  /* Adjust the height of the header as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+  /* Hide any overflow from the video */
+}
+
+header {
+  position: relative;
+}
+
+
+.background-video {
+  width: 100%; /* Set the video width to 100% */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  margin-bottom: 1rem;
+}
+
+.content button {
+  display: block;
+  /* Display the button as a block-level element */
+  margin: 1rem auto 0;
+  /* Add margin to separate the button from the paragraph and center it horizontally */
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
