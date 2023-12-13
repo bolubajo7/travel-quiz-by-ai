@@ -146,21 +146,18 @@ function QuizPage() {
   ));
 
   function handleClimateCardClick(climate) {
-    console.log("Clicked on:", climate);
     setCurrentQuestion(2);
     setSelectedClimate(climate);
   }
   function handleActivityCardClick(activity) {
-    console.log("Clicked on:", activity);
     setCurrentQuestion(3);
     setSelectedActivity(activity);
   }
   function handleTravellersCardClick(traveller) {
-    console.log("Clicked on:", traveller);
     setCurrentQuestion(2);
   }
   function navToDestination() {
-    navigate("/destination");
+    navigate("/destination-page");
   }
 
   return (
@@ -184,14 +181,18 @@ function QuizPage() {
         } else if (currentQuestion === 3) {
           return (
             <div>
-              <WeatherCard
-                record={{
-                  name: "Find your destination!",
-                  img: TropicalImage,
-                  text: "",
-                }}
-                onClick={navToDestination}
-              />
+              <WeatherCards
+                cards={
+                  <WeatherCard
+                    record={{
+                      name: "Find your recommendation!",
+                      img: TropicalImage,
+                      text: "",
+                    }}
+                    onClick={navToDestination}
+                  />
+                }
+              ></WeatherCards>
             </div>
           );
         }

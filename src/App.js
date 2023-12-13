@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route exath path="/" Component={HomePage} />
           <Route exath path="/quiz-page" Component={QuizPage} />
-          <Route exath path = "/destination-page" Component={DestinationPage} />
+          <Route exath path="/destination-page" Component={DestinationPage} />
         </Routes>
       </Router>
     </div>

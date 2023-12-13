@@ -15,6 +15,8 @@ export const MainBody = () => {
       <div className="content">
         <h1>Find your dream destination</h1>
         <p>Explore and discover our hidden gem places that are unique.</p>
+        <br />
+        <h2>Powered (Written) by AI!</h2>
         <Link to="/quiz-page">
           <button>Let's go</button>
         </Link>

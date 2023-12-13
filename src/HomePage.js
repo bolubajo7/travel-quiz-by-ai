@@ -5,7 +5,7 @@ import MainBody from "./MainBody";
 export const HomePage = () => {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <MainBody />
     </div>
   );

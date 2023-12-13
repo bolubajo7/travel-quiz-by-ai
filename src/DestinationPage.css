@@ -1,8 +1,7 @@
-
-
 .header {
   position: relative;
-  height: 500px;
+  height: 100vh;
+  width: 100%;
   /* Adjust the height of the header as needed */
   display: flex;
   flex-direction: column;
@@ -13,15 +12,14 @@
   /* Hide any overflow from the video */
 }
 
-header {
-  position: relative;
-}
-
-
 .background-video {
-  width: 100%; /* Set the video width to 100% */
-  height: auto; /* Maintain aspect ratio */
-  display: block;
+  min-width: 100vw;
+  min-height: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .content {
@@ -50,4 +48,8 @@ header {
   padding: 1rem 2rem;
   font-size: 1rem;
   cursor: pointer;
+}
+
+video {
+  width: 100%;
 }

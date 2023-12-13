@@ -1,8 +1,7 @@
 // Header.js
-import React from 'react';
-import './Header.css'; // Import the CSS file
-import BALogo from "./resources/British_Airways.svg"
-
+import React from "react";
+import "./Header.css"; // Import the CSS file
+import BALogo from "./resources/British_Airways.svg";
 
 export const Header = () => {
   return (
@@ -14,5 +13,5 @@ export const Header = () => {
       </div>
     </header>
   );
-}
+};
 export default Header;

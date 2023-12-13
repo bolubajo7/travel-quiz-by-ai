@@ -5,16 +5,15 @@ import DestinationPageVideo from "./resources/destination_page_background_video.
 export const DestinationPage = () => {
   return (
     <div className="header">
-      <header>
-        <video autoPlay loop muted>
-          <source src={DestinationPageVideo} type="video/mp4" />
-        </video>
-        <div className="content">
-          <h1>Provo, Turks and Caicos Islands</h1>
-          <p>This is the place for you! Based on your answers</p>
-          <button>Discover more</button>
-        </div>
-      </header>
+      <video autoPlay loop muted>
+        <source src={DestinationPageVideo} type="video/mp4" />
+      </video>
+      <div className="content">
+        <h1>Provo, Turks and Caicos Islands</h1>
+        <br />
+        <p>This is the place for you! Based on your answers</p>
+        <button>Discover more</button>
+      </div>
     </div>
   );
 };
