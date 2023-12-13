@@ -1,0 +1,16 @@
+/* Header.css */
+.header {
+    background-color: white;
+    padding: 20px 20px; /* Adjust padding as needed */
+    display: flex;
+    justify-content: space-between; /* Distribute content along the main axis */
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100px; /* Adjust the height of the header */
+  }
+  
+  .logo img {
+    width: 100px; /* Adjust the width as needed */
+    height: auto;
+  }
+  

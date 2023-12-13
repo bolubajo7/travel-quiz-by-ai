@@ -71,7 +71,7 @@ const whenQuestion = "When would you like to go?";
 const climateQuestion = "What is the weather is like?";
 const activityQuestion = "What do you like to do on holiday?";
 
-function Quiz() {
+function QuizPage() {
   const activityCards = Object.values(Activities).map((activity, index) => (
     <WeatherCard
       key={index}
@@ -131,4 +131,4 @@ function Quiz() {
   );
 }
 
-export default Quiz;
+export default QuizPage;
