@@ -4,6 +4,7 @@ import WeatherCards from "./WeatherCards";
 import QuestionCard from "./QuestionCard";
 import WeatherCard from "./WeatherCard"; // Assuming this is the correct path
 import "./App.css";
+import { useNavigate } from "react-router-dom";
 
 import ContinentalImage from "./resources/climates/Continental.jpg";
 import DryDesertImage from "./resources/climates/DryDesert.jpg";
@@ -17,38 +18,70 @@ import SubtropicalImage from "./resources/climates/Subtropical.jpg";
 import TemperateImage from "./resources/climates/Temperate.jpg";
 import TropicalImage from "./resources/climates/Tropical.jpg";
 
+import CulinaryExperiencesImage from "./resources/activities/CulinaryExperiences.png";
+import CulturalToursImage from "./resources/activities/CulturalTours.png";
+import HistoricalExplorationImage from "./resources/activities/HistoricalExploration.png";
+import LuxuryExperiencesImage from "./resources/activities/LuxuryExperiences.png";
+import NatureandWildlifeImage from "./resources/activities/NatureandWildlife.png";
+import NightlifeImage from "./resources/activities/Nightlife.png";
+import OutdoorAdventuresImage from "./resources/activities/OutdoorAdventures.png";
+import ShoppingImage from "./resources/activities/Shopping.png";
+import SightseeingImage from "./resources/activities/Sightseeing.png";
+import SnorkelingandDivingImage from "./resources/activities/SnorkelingandDiving.png";
+import WaterSportsImage from "./resources/activities/WaterSports.png";
+
+import FamilyImage from "./resources/travellers/Family.png";
+import FriendsImage from "./resources/travellers/Friends.png";
+import PartnerImage from "./resources/travellers/Partner.png";
+import SoloImage from "./resources/travellers/Solo.png";
+
+import backgroundImage from "./resources/backgrounds/Questions cards.png";
+
 const Activities = {
-  Sightseeing: { name: "Sightseeing", img: DryDesertImage, text: "" },
-  Shopping: { name: "Shopping", img: DryDesertImage, text: "" },
-  BeachActivities: { name: "Beach Activities", img: DryDesertImage, text: "" },
-  CulturalTours: { name: "Cultural Tours", img: DryDesertImage, text: "" },
-  OutdoorAdventures: {
-    name: "Outdoor Adventures",
-    img: DryDesertImage,
-    text: "",
-  },
   CulinaryExperiences: {
-    name: "Culinary Experiences",
-    img: DryDesertImage,
+    name: "CulinaryExperiences",
+    img: CulinaryExperiencesImage,
     text: "",
   },
+  CulturalTours: { name: "Cultural Tours", img: CulturalToursImage, text: "" },
   HistoricalExploration: {
     name: "Historical Exploration",
-    img: DryDesertImage,
+    img: HistoricalExplorationImage,
     text: "",
   },
-  Nightlife: { name: "Nightlife", img: DryDesertImage, text: "" },
+  LuxuryExperiences: {
+    name: "Luxury Experiences",
+    img: LuxuryExperiencesImage,
+    text: "",
+  },
+  OutdoorAdventures: {
+    name: "Outdoor Adventures",
+    img: OutdoorAdventuresImage,
+    text: "",
+  },
+  Nightlife: { name: "Nightlife", img: NightlifeImage, text: "" },
   NatureAndWildlife: {
     name: "Nature and Wildlife",
-    img: DryDesertImage,
+    img: NatureandWildlifeImage,
     text: "",
   },
-  RelaxationAndSpa: {
-    name: "Relaxation and Spa",
-    img: DryDesertImage,
+  Shopping: {
+    name: "Shopping",
+    img: ShoppingImage,
     text: "",
   },
-  IDontMind: { name: "I Don't Mind!", img: DryDesertImage, text: "" },
+
+  Sightseeing: {
+    name: "Sightseeing",
+    img: SightseeingImage,
+    text: "",
+  },
+  SnorkelingandDiving: {
+    name: "Snorkeling and Diving",
+    img: SnorkelingandDivingImage,
+    text: "",
+  },
+  WaterSports: { name: "Water Sports", img: WaterSportsImage, text: "" },
 };
 let selectedActivity = undefined;
 
@@ -65,13 +98,31 @@ const Climates = {
   Marine: { name: "Marine", img: MarineImage, text: "" },
   IDontMind: { name: "I don't mind!", img: IDontMindImage, text: "" },
 };
+
+const Travellers = {
+  DryDesert: { name: "", img: FamilyImage, text: "" },
+  Tropical: { name: "", img: FriendsImage, text: "" },
+  Temperate: { name: "", img: PartnerImage, text: "" },
+  Continental: { name: "", img: SoloImage, text: "" },
+};
 let selectedClimate = undefined;
 
 const whenQuestion = "When would you like to go?";
 const climateQuestion = "What is the weather is like?";
-const activityQuestion = "What do you like to do on holiday?";
+const activityQuestion = "What do you want to do?";
+const travellersQuestion = "Who are you travelling with?";
 
 function QuizPage() {
+  let navigate = useNavigate();
+
+  const [currentQuestion, setCurrentQuestion] = useState(1);
+  const [selectedActivity, setSelectedActivity] = useState();
+  const [selectedClimate, setSelectedClimate] = useState();
+
+  const sectionStyle = {
+    backgroundImage: `url(${backgroundImage})`,
+  };
+
   const activityCards = Object.values(Activities).map((activity, index) => (
     <WeatherCard
       key={index}
@@ -86,30 +137,41 @@ function QuizPage() {
       onClick={handleClimateCardClick}
     />
   ));
+  const travellersCards = Object.values(Travellers).map((record, index) => (
+    <WeatherCard
+      key={index}
+      record={record}
+      onClick={handleTravellersCardClick}
+    />
+  ));
 
-  const [currentQuestion, setCurrentQuestion] = useState(1);
-
-  function handleActivityCardClick(activity) {
-    console.log("Clicked on:", activity);
-    setCurrentQuestion(3);
-    selectedActivity = activity;
-  }
   function handleClimateCardClick(climate) {
     console.log("Clicked on:", climate);
     setCurrentQuestion(2);
-    selectedClimate = climate;
-    console.log(currentQuestion);
+    setSelectedClimate(climate);
+  }
+  function handleActivityCardClick(activity) {
+    console.log("Clicked on:", activity);
+    setCurrentQuestion(3);
+    setSelectedActivity(activity);
+  }
+  function handleTravellersCardClick(traveller) {
+    console.log("Clicked on:", traveller);
+    setCurrentQuestion(2);
+  }
+  function navToDestination() {
+    navigate("/destination");
   }
 
   return (
-    <div className="App">
+    <div className="Quiz" style={sectionStyle}>
       <DestinationHeader />
       {(() => {
         if (currentQuestion === 1) {
           return (
             <div>
-              <QuestionCard question={climateQuestion} />
-              <WeatherCards cards={climateCards} />
+              <QuestionCard question={travellersQuestion} />
+              <WeatherCards cards={travellersCards} />
             </div>
           );
         } else if (currentQuestion === 2) {
@@ -122,7 +184,14 @@ function QuizPage() {
         } else if (currentQuestion === 3) {
           return (
             <div>
-              <QuestionCard question={"Checking our destinations!"} />
+              <WeatherCard
+                record={{
+                  name: "Find your destination!",
+                  img: TropicalImage,
+                  text: "",
+                }}
+                onClick={navToDestination}
+              />
             </div>
           );
         }
